@@ -12,34 +12,27 @@ public class No11652{
     static void input() throws IOException{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(bf.readLine());
-        arr = new long[N];
-        for(int i = 0 ; i < N ; i++){
+        arr = new long[N+1];
+        for(int i = 1 ; i < N+1 ; i++){
             arr[i] = Long.parseLong(bf.readLine());
         }
         Arrays.sort(arr);
     }
 
     static void check(){
-        long pre = arr[0];
-        result = arr[0];
-        maxCount = 0;
-        int nowCount = 0;
-        for(int i = 0 ; i < N ; i++){
-            if(maxCount < nowCount){
-                maxCount = nowCount;
-                result = arr[i-1];
+        result = arr[1];
+        maxCount = 1;
+        int nowCount = 1;
+        for(int i = 2 ; i < N ; i++){
+            if(arr[i]==arr[i-1]){
+                nowCount++;
             }
-            if(pre == arr[i]){
-                nowCount ++;
-            }
-            if(pre != arr[i]){
+            else{
                 nowCount = 1;
-                pre = arr[i];
             }
-        }
-        if(maxCount < nowCount){
-            maxCount = nowCount;
-            result = arr[N-1];
+            if(maxCount < nowCount){
+                result = arr[i];
+            }
         }
     }
 
