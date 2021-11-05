@@ -51,4 +51,21 @@ public class No10157 {
         sb.append(y+1).append(" ").append(r-x);
         System.out.println(sb);
     }
+    public int[] solution(int[] numbers) {
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0 ; i < numbers.length ; i++){
+            for(int j = 0 ; j < numbers.length ; j++){
+                int num = numbers[i]+numbers[j];
+                if(!list.contains(num)){
+                    list.add(num);
+                }
+            }
+        }
+        Collections.sort(list);
+        int[] answer = new int[list.size()];
+        for(int i = 0 ; i < list.size() ; i++){
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
 }
