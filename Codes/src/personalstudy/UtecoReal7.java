@@ -1,8 +1,6 @@
 package personalstudy;
-
+import java.util.*;
 public class UtecoReal7 {
-    import java.util.*;
-    class Solution {
         static char[][] gridArr;
         public String[] solution(String[] grid, boolean clockwise) {
             gridArr = new char[grid.length][];
@@ -67,5 +65,4 @@ public class UtecoReal7 {
             }
             return sb.toString();
         }
-    }
 }
