@@ -1,4 +1,4 @@
-fun main() {
+private fun main() {
     val line = readln()
         .split("\\s".toRegex()).toTypedArray()
     val n = line[0].toInt()
